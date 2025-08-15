@@ -1,5 +1,6 @@
 library(shiny)
 library(shinyMobile)
+library(bsicons)
 library(azmetr)
 library(dplyr)
 library(ggplot2)
@@ -11,7 +12,7 @@ thematic_shiny(font = "auto")
 options <- f7DefaultOptions()
 options$color <- "#0C234B" #arizona blue
 options$dark <- FALSE
-options$theme <- "auto"
+options$theme <- "ios"
 
 # pre-load station data
 stations <- station_info$meta_station_id
@@ -20,12 +21,33 @@ ui <- f7Page(
   f7SingleLayout(
     navbar = f7Navbar(
       title = div("AZMet"),
+      leftPanel = TRUE,
       hairline = FALSE
     ),
     toolbar = f7Toolbar(
-      f7Button(inputId = "btn_refresh", label = "Refresh Data"),
+      f7Button(
+        inputId = "btn_refresh",
+        label = "Refresh Data",
+        icon = f7Icon("arrow_2_squarepath")
+      ),
       position = "bottom",
       icons = TRUE
+    ),
+    panels = f7Panel(
+      title = "Menu",
+      f7Block(f7Toggle("darkmode", "Dark mode")),
+      f7Block(f7Link(
+        " About",
+        icon = f7Icon("question_circle"),
+        href = "https://azmet.arizona.edu"
+      )),
+      f7Block(f7Link(
+        " Source code",
+        icon = f7Icon("logo_github"),
+        href = "https://github.com/Aariq/azmet-mobile"
+      )),
+      side = "left",
+      effect = "cover"
     ),
     f7List(
       f7SmartSelect(
