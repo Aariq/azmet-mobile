@@ -11,7 +11,7 @@ thematic_shiny(font = "auto")
 options <- f7DefaultOptions()
 options$color <- "#0C234B" #arizona blue
 options$dark <- TRUE
-options$theme <- "ios"
+options$theme <- "auto"
 
 # pre-load station data
 stations <- station_info$meta_station_id
