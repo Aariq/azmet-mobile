@@ -1,6 +1,5 @@
 library(shiny)
 library(shinyMobile)
-library(bsicons)
 library(azmetr)
 library(dplyr)
 library(ggplot2)
