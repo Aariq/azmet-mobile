@@ -13,6 +13,7 @@ options <- f7DefaultOptions()
 options$color <- "#0C234B" #arizona blue
 options$dark <- FALSE
 options$theme <- "ios"
+# options$pullToRefresh <- TRUE # intersting, maybe could be used to refresh data?
 
 # pre-load station data
 stations <- station_info$meta_station_id
@@ -35,7 +36,6 @@ ui <- f7Page(
     ),
     panels = f7Panel(
       title = "Menu",
-      f7Block(f7Toggle("darkmode", "Dark mode")),
       f7Block(f7Link(
         " About",
         icon = f7Icon("question_circle"),
