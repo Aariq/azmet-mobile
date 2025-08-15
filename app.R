@@ -28,7 +28,7 @@ ui <- f7Page(
       icons = TRUE
     ),
     f7List(
-      f7Select(
+      f7SmartSelect(
         inputId = "station",
         label = "Select a Station",
         choices = stations
