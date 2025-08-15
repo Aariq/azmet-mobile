@@ -11,7 +11,7 @@ thematic_shiny(font = "auto")
 options <- f7DefaultOptions()
 options$color <- "#0C234B" #arizona blue
 options$dark <- TRUE
-options$theme <- "auto"
+options$theme <- "ios"
 
 # pre-load station data
 stations <- station_info$meta_station_id
@@ -27,10 +27,20 @@ ui <- f7Page(
       position = "bottom",
       icons = TRUE
     ),
-    f7Select(
-      inputId = "station",
-      label = "Select a Station",
-      choices = stations
+    f7List(
+      f7Select(
+        inputId = "station",
+        label = "Select a Station",
+        choices = stations
+      ),
+      f7Select(
+        inputId = "var",
+        label = "Choose a Variable",
+        choices = c("precip", "temp")
+      ),
+      outline = TRUE,
+      dividers = TRUE,
+      strong = TRUE
     ),
     f7Card(
       plotOutput("temp")
@@ -48,9 +58,10 @@ server <- function(input, output, session) {
         lubridate::hours(24)
     )
   }) |>
-    shiny::bindEvent(input$btn_refresh, ignoreNULL = FALSE, ignoreInit = TRUE)
+    shiny::bindEvent(input$btn_refresh)
 
   data_station <- reactive({
+    req(input$station)
     data() |>
       dplyr::filter(meta_station_id %in% input$station)
   })

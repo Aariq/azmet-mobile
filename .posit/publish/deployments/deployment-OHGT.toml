@@ -11,14 +11,22 @@ id = 'ebfc00f2-de9b-404f-b07e-ebff7feb6f48'
 dashboard_url = 'https://viz.datascience.arizona.edu/connect/#/apps/ebfc00f2-de9b-404f-b07e-ebff7feb6f48'
 direct_url = 'https://viz.datascience.arizona.edu/content/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/'
 logs_url = 'https://viz.datascience.arizona.edu/connect/#/apps/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/logs'
-deployed_at = '2025-08-15T13:11:32-07:00'
-bundle_id = '7469'
-bundle_url = 'https://viz.datascience.arizona.edu/__api__/v1/content/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/bundles/7469/download'
+deployed_at = '2025-08-15T13:46:28-07:00'
+bundle_id = '7474'
+bundle_url = 'https://viz.datascience.arizona.edu/__api__/v1/content/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/bundles/7474/download'
 files = [
   '.posit/publish/deployments/deployment-OHGT.toml',
   '.posit/publish/shiny-mobile-0B7G.toml',
   'app.R',
-  'renv.lock'
+  'renv.lock',
+  'www/icons/apple-touch-icon-152x152.png',
+  'www/icons/apple-touch-icon.png',
+  'www/icons/favicon-16x16.png',
+  'www/icons/favicon-32x32.png',
+  'www/icons/favicon.ico',
+  'www/manifest.webmanifest',
+  'www/offline.html',
+  'www/service-worker.js'
 ]
 
 [configuration]
@@ -30,7 +38,8 @@ files = [
   '/app.R',
   '/renv.lock',
   '/.posit/publish/shiny-mobile-0B7G.toml',
-  '/.posit/publish/deployments/deployment-OHGT.toml'
+  '/.posit/publish/deployments/deployment-OHGT.toml',
+  '/www'
 ]
 title = 'shiny-mobile'
 

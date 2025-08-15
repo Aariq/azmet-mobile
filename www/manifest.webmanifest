@@ -1,0 +1,16 @@
+{
+  "name": "AZmet 15-min data",
+  "short_name": "AZMet",
+  "description": "Displays AZMet data",
+  "lang": "en-US",
+  "start_url": "https://viz.datascience.arizona.edu/azmet-mobile-test/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0C234B",
+  "icons": [
+    {
+      "src": "icons/apple-touch-icon-152x152.png",
+      "sizes": "152x152"
+    }
+  ]
+}
