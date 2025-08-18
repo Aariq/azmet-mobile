@@ -72,6 +72,12 @@ ui <- f7Page(
             f7Card(
               plotOutput("precip")
             )
+          ),
+          f7AccordionItem(
+            title = "Relative Humidity",
+            f7Card(
+              plotOutput("rh")
+            )
           )
         )
       ),
@@ -203,6 +209,12 @@ server <- function(input, output, session) {
       ggplot(aes(x = datetime, y = precip_total_mm)) +
       geom_col() +
       labs(title = "Precipitation (mm)", x = NULL)
+  })
+  output$rh <- renderPlot({
+    data_station() |>
+      ggplot(aes(x = datetime, y = relative_humidity)) +
+      geom_line() +
+      labs(title = "RH (%)", x = NULL)
   })
 }
 
