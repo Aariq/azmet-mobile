@@ -10,8 +10,9 @@ thematic_shiny(font = "auto")
 #global options
 options <- f7DefaultOptions()
 options$color <- "#0C234B" #arizona blue
+options$filled <- TRUE #fill navbar and toolbar with options$color
 options$dark <- FALSE
-options$theme <- "ios"
+options$theme <- "md" #"ios" to see iOS them, "auto" or "md" to see Android theme
 # options$pullToRefresh <- TRUE # intersting, maybe could be used to refresh data?
 
 # pre-load station data
