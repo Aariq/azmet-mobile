@@ -2,6 +2,7 @@ library(shiny)
 library(shinyMobile)
 library(azmetr)
 library(dplyr)
+library(reactable)
 library(ggplot2)
 library(thematic)
 thematic_shiny(font = "auto")
@@ -80,9 +81,20 @@ ui <- f7Page(
         f7BlockTitle("Latest 15-minute data from across the network"),
         f7Block(
           f7BlockHeader(
-            "Scroll or swipe over the table to view additional rows and columns"
+            "uses `f7Table()`"
           ),
-          uiOutput("table"),
+          uiOutput("table")
+        )
+      ),
+      f7Tab(
+        title = "Table2",
+        tabName = "tabtable2",
+        f7BlockTitle("Latest 15-minute data from across the network"),
+        f7Block(
+          f7BlockHeader(
+            "uses `reactable`"
+          ),
+          reactableOutput("table2"),
         )
       )
     )
@@ -136,6 +148,50 @@ server <- function(input, output, session) {
         # card = TRUE #put table in card or not (modifies appearance slightly)
       )
   })
+
+  output$table2 <- renderReactable({
+    data() |>
+      dplyr::group_by(meta_station_id) |>
+      dplyr::filter(datetime == max(datetime)) |>
+      dplyr::ungroup() |>
+      dplyr::select(
+        meta_station_name,
+        datetime,
+        p = precip_total_mm,
+        RH = relative_humidity,
+        SR = sol_rad_total,
+        T = temp_airC,
+        T_max = temp_air_maxC,
+        T_min = temp_air_minC,
+        T_dew_pt = dwpt,
+        T_soil_10 = temp_soil_10cmC,
+        T_soil_50 = temp_soil_50cmC,
+        WD = wind_vector_dir,
+        WD_2min = wind_2min_vector_dir,
+        WD_2min_max = wind_2min_vector_dir_max_hourly,
+        WS = wind_spd_mps,
+        WS_max = wind_spd_max_mps,
+        WS_2min = wind_2min_spd_mean_mps,
+        WS_2min_max = wind_2min_spd_max_mps_hourly
+      ) |>
+      reactable::reactable(
+        columns = list(
+          meta_station_name = reactable::colDef(
+            name = "Station",
+            sticky = "left",
+            minWidth = 150,
+            rowHeader = FALSE
+          ),
+          datetime = reactable::colDef(
+            name = "Latest Update",
+            minWidth = 180,
+            rowHeader = TRUE
+          )
+        ),
+        pagination = FALSE
+      )
+  })
+
   output$temp <- renderPlot({
     data_station() |>
       ggplot(aes(x = datetime, y = temp_airC)) +
