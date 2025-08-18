@@ -55,23 +55,18 @@ ui <- f7Page(
         label = "Select a Station",
         choices = stations
       ),
-      # f7DatePicker(
-      #   inputId = "daterange",
-      #   label = "Date Range",
-      #   rangePicker = TRUE
-      # ),
-      # outline = TRUE,
-      # dividers = TRUE,
       strong = TRUE
     ),
-    f7Swiper(
-      id = "plots_swiper",
-      f7Slide(
+    f7Accordion(
+      f7AccordionItem(
+        title = "Temperature",
         f7Card(
           plotOutput("temp")
-        )
+        ),
+        open = TRUE
       ),
-      f7Slide(
+      f7AccordionItem(
+        title = "Precipitation",
         f7Card(
           plotOutput("precip")
         )
