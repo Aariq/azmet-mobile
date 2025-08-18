@@ -48,7 +48,7 @@ ui <- f7Page(
     ),
     f7Tabs(
       f7Tab(
-        title = "Station-level Summaries",
+        title = "Plots",
         tabName = "tabplots",
         f7List(
           f7SmartSelect(
@@ -75,7 +75,7 @@ ui <- f7Page(
         )
       ),
       f7Tab(
-        title = "Network-wide Summary",
+        title = "Table",
         tabName = "tabtable",
         f7BlockTitle("Latest 15-minute data from across the network"),
         f7Block(
