@@ -29,13 +29,24 @@ ui <- f7Page(
     ),
     panels = f7Panel(
       title = "Menu",
+      # f7Block(f7Radio(
+      #   inputId = "dark",
+      #   label = "Mode",
+      #   choices = c("dark", "light"),
+      #   selected = ifelse(options$dark, "dark", "light")
+      # )),
+      f7Block(f7Toggle(
+        inputId = "dark",
+        label = f7Icon("moon"),
+        checked = options$dark
+      )),
       f7Block(f7Link(
-        " About",
+        "  About",
         icon = f7Icon("question_circle"),
         href = "https://azmet.arizona.edu"
       )),
       f7Block(f7Link(
-        " Source code",
+        "  Source code",
         icon = f7Icon("logo_github"),
         href = "https://github.com/Aariq/azmet-mobile"
       )),
@@ -111,6 +122,15 @@ ui <- f7Page(
 )
 
 server <- function(input, output, session) {
+  # dark mode switch
+  observeEvent(input$dark, ignoreInit = TRUE, {
+    updateF7App(
+      options = list(
+        dark = input$dark
+      )
+    )
+  })
+
   data <- reactive({
     azmetr::az_15min(
       start_date_time = lubridate::now(tzone = "America/Phoenix") -
