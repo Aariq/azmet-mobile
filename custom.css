@@ -1,0 +1,32 @@
+/* U of A branding colors */
+
+:root {
+  --az-blue: #0C234B;
+  --az-red: #AB0520;
+  --warm-gray: #F4EDE5;
+  --cool-gray: #E2E9EB;
+  --midnight: #001C48;
+  --azurite: #1E5288;
+  --oasis: #378DBD;
+  --chili: #8B0015;
+  --bloom: #EF4056;
+  --sky: #81D3EB;
+  --leaf: #70B865;
+  --river: #007D84;
+  --mesa: #A95C42;
+}
+
+/* Custom color theme */
+:root {
+  --f7-theme-color: var(--az-blue);
+  --f7-theme-color-rgb: 12, 35, 75; /* rgb version of theme color.  need to figure out manually*/
+  --f7-theme-color-shade: var(--midnight);
+  --f7-theme-color-tint: var(--azurite);
+  --f7-page-bg-color: var(--warm-gray);
+  --f7-text-color: black;
+  --f7-bars-bg-color: var(--cool-gray);
+  --f7-navbar-bg-color: var(--az-blue);
+  --f7-navbar-link-color: var(--sky);
+  --f7-navbar-text-color: var(--bloom);
+}
+

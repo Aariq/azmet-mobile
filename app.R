@@ -10,8 +10,8 @@ thematic_shiny(font = "auto")
 
 #global options
 options <- f7DefaultOptions()
-options$color <- "#0C234B" #arizona blue
-options$filled <- TRUE #fill navbar and toolbar with options$color
+# options$color <- "#0C234B" #arizona blue
+# options$filled <- TRUE #fill navbar and toolbar with options$color
 options$dark <- FALSE
 options$theme <- "auto" #"ios" to see iOS them, "auto" or "md" to see Android theme
 # options$skeletonsOnLoad <- TRUE #built-in loading indicators
@@ -21,6 +21,7 @@ options$theme <- "auto" #"ios" to see iOS them, "auto" or "md" to see Android th
 stations <- station_info$meta_station_id
 names(stations) <- station_info$meta_station_name
 ui <- f7Page(
+  shiny::includeCSS("custom.css"),
   f7TabLayout(
     navbar = f7Navbar(
       title = div("AZMet"),
@@ -29,12 +30,6 @@ ui <- f7Page(
     ),
     panels = f7Panel(
       title = "Menu",
-      # f7Block(f7Radio(
-      #   inputId = "dark",
-      #   label = "Mode",
-      #   choices = c("dark", "light"),
-      #   selected = ifelse(options$dark, "dark", "light")
-      # )),
       f7Block(f7Toggle(
         inputId = "dark",
         label = f7Icon("moon"),
