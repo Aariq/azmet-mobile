@@ -16,10 +16,10 @@
   --mesa: #A95C42;
 }
 
-/* Custom color theme */
+/* Custom color theme (only works in light mode) */
 :root {
   --f7-theme-color: var(--az-blue);
-  --f7-theme-color-rgb: 12, 35, 75; /* rgb version of theme color.  need to figure out manually*/
+  --f7-theme-color-rgb: 12, 35, 75; /* rgb version of theme color.  need to figure out manually */
   --f7-theme-color-shade: var(--midnight);
   --f7-theme-color-tint: var(--azurite);
   --f7-page-bg-color: var(--warm-gray);
