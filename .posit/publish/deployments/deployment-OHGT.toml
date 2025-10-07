@@ -11,9 +11,9 @@ id = 'ebfc00f2-de9b-404f-b07e-ebff7feb6f48'
 dashboard_url = 'https://viz.datascience.arizona.edu/connect/#/apps/ebfc00f2-de9b-404f-b07e-ebff7feb6f48'
 direct_url = 'https://viz.datascience.arizona.edu/content/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/'
 logs_url = 'https://viz.datascience.arizona.edu/connect/#/apps/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/logs'
-deployed_at = '2025-10-07T10:49:25-07:00'
-bundle_id = '7844'
-bundle_url = 'https://viz.datascience.arizona.edu/__api__/v1/content/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/bundles/7844/download'
+deployed_at = '2025-10-07T12:48:55-07:00'
+bundle_id = '7846'
+bundle_url = 'https://viz.datascience.arizona.edu/__api__/v1/content/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/bundles/7846/download'
 files = [
   '.posit/publish/deployments/deployment-OHGT.toml',
   '.posit/publish/shiny-mobile-0B7G.toml',
