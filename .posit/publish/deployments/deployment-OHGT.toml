@@ -2,7 +2,7 @@
 '$schema' = 'https://cdn.posit.co/publisher/schemas/posit-publishing-record-schema-v3.json'
 server_type = 'connect'
 server_url = 'https://viz.datascience.arizona.edu'
-client_version = '1.23.7'
+client_version = '1.23.10'
 created_at = ''
 dismissed_at = ''
 type = 'r-shiny'
@@ -11,16 +11,20 @@ id = 'ebfc00f2-de9b-404f-b07e-ebff7feb6f48'
 dashboard_url = 'https://viz.datascience.arizona.edu/connect/#/apps/ebfc00f2-de9b-404f-b07e-ebff7feb6f48'
 direct_url = 'https://viz.datascience.arizona.edu/content/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/'
 logs_url = 'https://viz.datascience.arizona.edu/connect/#/apps/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/logs'
-deployed_at = '2025-09-25T11:20:05-07:00'
-bundle_id = '7767'
-bundle_url = 'https://viz.datascience.arizona.edu/__api__/v1/content/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/bundles/7767/download'
+deployed_at = '2025-10-07T09:09:02-07:00'
+bundle_id = '7838'
+bundle_url = 'https://viz.datascience.arizona.edu/__api__/v1/content/ebfc00f2-de9b-404f-b07e-ebff7feb6f48/bundles/7838/download'
 files = [
   '.posit/publish/deployments/deployment-OHGT.toml',
   '.posit/publish/shiny-mobile-0B7G.toml',
   'app.R',
   'custom.css',
   'renv.lock',
+  'www/icons/apple-touch-icon-120x120.png',
   'www/icons/apple-touch-icon-152x152.png',
+  'www/icons/apple-touch-icon-180x180.png',
+  'www/icons/apple-touch-icon-60x60.png',
+  'www/icons/apple-touch-icon-76x76.png',
   'www/icons/apple-touch-icon.png',
   'www/icons/favicon-16x16.png',
   'www/icons/favicon-32x32.png',
